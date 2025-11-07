@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Guy Hockley</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -21,7 +23,6 @@
       text-align: center;
       backdrop-filter: blur(4px);
     }
-
     .card {
       background: rgba(255, 255, 255, 0.9);
       border-radius: 20px;
@@ -30,7 +31,6 @@
       max-width: 400px;
       width: 90%;
     }
-
     .profile-photo {
       width: 150px;
       height: 150px;
@@ -38,17 +38,14 @@
       object-fit: cover;
       margin-bottom: 20px;
     }
-
     h1 {
       font-size: 1.8rem;
       margin: 0 0 10px;
     }
-
     p {
       font-size: 1rem;
       margin: 0 0 20px;
     }
-
     .buttons a {
       display: inline-block;
       text-decoration: none;
@@ -59,38 +56,55 @@
       margin: 5px;
       transition: background 0.3s ease;
     }
-
     .buttons a:hover {
       background: #005bb5;
     }
-
     .social-icons {
       margin-top: 20px;
     }
-
     .social-icons a {
       margin: 0 10px;
       color: #0073e6;
       text-decoration: none;
-      font-size: 1.5rem;
+      font-size: 2rem;
+      transition: color 0.3s ease, transform 0.3s ease;
+      display: inline-block;
+    }
+    .social-icons a:hover {
+      color: #005bb5;
+      transform: scale(1.1);
+    }
+    /* Brand-specific colors on hover */
+    .social-icons a.linkedin:hover {
+      color: #0077b5;
+    }
+    .social-icons a.whatsapp:hover {
+      color: #25D366;
+    }
+    .social-icons a.email:hover {
+      color: #EA4335;
     }
   </style>
 </head>
 <body>
   <div class="card">
-    <img src="images/profile.jpg" alt="Guy Hockley" class="profile-photo">
+    <img src=":images/profile.jpg" alt="Guy Hockley" class="profile-photo">
     <h1>Guy Hockley</h1>
     <p>Analytical and entrepreneurial Liberal Arts graduate from the University of Nottingham.</p>
-
     <div class="buttons">
-      <a href="docs/CV.pdf" target="_blank">View my CV</a>
+      <a href=":docs/CV.pdf" target="_blank">View my CV</a>
       <a href="https://calendly.com/guyhockley/new-meeting" target="_blank">Book a meeting</a>
     </div>
-
     <div class="social-icons">
-      <a href="https://www.linkedin.com/in/guy-hockley/" target="_blank">🔗</a>
-      <a href="https://wa.me/447493886586" target="_blank">💬</a>
-      <a href="mailto:guygordonhockley@gmail.com">✉️</a>
+      <a href="https://www.linkedin.com/in/guy-hockley/" target="_blank" class="linkedin" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://wa.me/447493886586" target="_blank" class="whatsapp" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="mailto:guygordonhockley@gmail.com" class="email" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
     </div>
   </div>
 </body>
