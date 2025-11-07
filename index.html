@@ -7,101 +7,150 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    /* General layout */
     body {
       font-family: 'Poppins', sans-serif;
-      background: #ffffff;
+      background-color: #fff;
       color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    /* Card container */
+    .card {
+      position: relative;
+      background: url('images/background.jpg') center/cover no-repeat;
+      border-radius: 25px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      width: 100%;
+      max-width: 420px;
+      min-height: 600px;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
-      margin: 0;
-      text-align: center;
+      padding: 30px 20px;
     }
 
-    .card {
-      background-image: url('images/background.jpg'); /* <-- your image here */
-      background-size: cover;
-      background-position: center;
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      padding: 30px;
-      max-width: 400px;
-      width: 90%;
-      color: white; /* ensure text is visible on image */
+    /* Overlay for readability */
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: 0;
     }
 
+    /* Profile photo */
     .profile-photo {
+      position: relative;
+      z-index: 1;
       width: 150px;
       height: 150px;
       border-radius: 50%;
       object-fit: cover;
+      border: 3px solid white;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       margin-bottom: 20px;
     }
 
     h1 {
+      position: relative;
+      z-index: 1;
       font-size: 1.8rem;
-      margin: 0 0 10px;
+      color: #000;
+      margin: 10px 0;
     }
 
     p {
+      position: relative;
+      z-index: 1;
       font-size: 1rem;
-      margin: 0 0 20px;
+      color: #333;
+      margin-bottom: 25px;
+      max-width: 300px;
+    }
+
+    /* Buttons */
+    .buttons {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 250px;
+      gap: 10px;
     }
 
     .buttons a {
-      display: inline-block;
       text-decoration: none;
-      background: #0073e6;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 10px;
-      margin: 5px;
-      transition: background 0.3s ease;
+      background: white;
+      color: #0073e6;
+      font-weight: 600;
+      padding: 12px 20px;
+      border-radius: 15px;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
     .buttons a:hover {
-      background: #005bb5;
+      background: #0073e6;
+      color: white;
+      transform: translateY(-2px);
     }
 
+    /* Social icons */
     .social-icons {
-      margin-top: 20px;
+      position: relative;
+      z-index: 1;
+      margin-top: 25px;
+      display: flex;
+      gap: 20px;
     }
 
     .social-icons a {
-      margin: 0 10px;
       color: #0073e6;
-      text-decoration: none;
-      font-size: 2rem;
-      transition: color 0.3s ease, transform 0.3s ease;
-      display: inline-block;
+      font-size: 1.8rem;
+      transition: transform 0.3s ease, color 0.3s ease;
     }
 
     .social-icons a:hover {
-      transform: scale(1.1);
+      transform: scale(1.15);
     }
 
-    .social-icons a.linkedin:hover {
-      color: #0077b5;
-    }
-    .social-icons a.whatsapp:hover {
-      color: #25D366;
-    }
-    .social-icons a.email:hover {
-      color: #EA4335;
+    .social-icons a.linkedin:hover { color: #0077b5; }
+    .social-icons a.whatsapp:hover { color: #25D366; }
+    .social-icons a.email:hover { color: #EA4335; }
+
+    /* Mobile layout */
+    @media (max-width: 480px) {
+      .card {
+        min-height: 100vh;
+        border-radius: 0;
+        max-width: none;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="card">
     <img src="images/profile.jpg" alt="Guy Hockley" class="profile-photo">
     <h1>Guy Hockley</h1>
     <p>Analytical and entrepreneurial Liberal Arts graduate from the University of Nottingham.</p>
+
     <div class="buttons">
       <a href="docs/CV.pdf" target="_blank">View my CV</a>
-      <a href="https://calendly.com/guyhockley/new-meeting" target="_blank">Book a meeting</a>
+      <a href="https://calendly.com/guyhockley/new-meeting" target="_blank">Book a Meeting</a>
     </div>
+
     <div class="social-icons">
       <a href="https://www.linkedin.com/in/guy-hockley/" target="_blank" class="linkedin" aria-label="LinkedIn">
         <i class="fab fa-linkedin"></i>
