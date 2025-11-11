@@ -59,6 +59,13 @@
     /* Keep default 85% from main .card rule */
   }
 }
+    /* Shrink the card by 10% on desktop screens */
+@media (min-width: 1024px) {
+  .card {
+    transform: scale(0.9);
+    transform-origin: center; /* ensures it shrinks inward evenly */
+  }
+}
 
       /* Profile photo */
     .profile-photo {
